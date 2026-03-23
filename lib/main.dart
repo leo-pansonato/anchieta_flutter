@@ -24,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _controller = TextEditingController();
   double _sliderValue = 0.5;
   int _radioValue = 0;
-  String _dropdownValue = 'Opção 1';
+  String _dropdownValue = 'Centro';
   bool _checkboxValue = false;
   String? _resultado;
 
@@ -71,8 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Column(
                       children: [
-                        Row(children: [Radio<int>(value: 0), Text('Entrega')]),
+                        Row(children: [Radio<int>(value: 0), Text('Carreto')]),
                         Row(children: [Radio<int>(value: 1), Text('Retirada')]),
+                        Row(children: [Radio<int>(value: 2), Text('Correio')]),
                       ],
                     ),
                   ),
@@ -84,14 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   DropdownButton<String>(
                     value: _dropdownValue,
                     items: [
-                      DropdownMenuItem(
-                        value: 'Opção 1',
-                        child: Text('Opção 1'),
-                      ),
-                      DropdownMenuItem(
-                        value: 'Opção 2',
-                        child: Text('Opção 2'),
-                      ),
+                      DropdownMenuItem(value: 'Centro', child: Text('Centro')),
+                      DropdownMenuItem(value: 'Leste', child: Text('Leste')),
                     ],
                     onChanged: (value) {
                       setState(() {
